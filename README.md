@@ -1,37 +1,68 @@
 # Testes unitários com Jest
 
+**Vamos direto ao ponto**
+1. [O que são testes unitários](#o-que-são-testes-unitários)
+2. [Conceitos](#conceitos)
+3. [O que preciso saber](#o-que-preciso-saber)
+4. [Os métodos mais comuns](#os-métodos-mais-comuns)
+5. [Asserções](#asserções)
+6. [Mocks](#mocks)
+7. [Snapshots](#snapshots)
+8. [Execução](#execução)
+9. [Referências](#referências)
+
 ## O que são testes unitários?
 Teste unitário é um método de teste de software que permite verificar se uma unidade isolada de código (por exemplo, uma função ou um método) está funcionando como o esperado. O objetivo é identificar problemas rapidamente e com eficiência, sem ter que testar todo o sistema. Testes unitários são normalmente escritos pelos desenvolvedores e executados automaticamente como parte do processo de build.
 
-### Para trabalhar com testes unitários usando Jest, você precisa ter conhecimento básico em JavaScript e compreender os conceitos de testes unitários em geral. Além disso, você precisa saber:
+## Conceitos
 
-1. Instalação e configuração do Jest em seu projeto.
+Os conceitos de teste unitário incluem:
 
-2. Escrita de testes: Jest fornece vários métodos, como describe, it, test, expect, etc., para escrever e executar seus testes.
+1. **Isolamento**: Cada teste unitário deve ser isolado e não depender de outros recursos ou dependências externas. Isso garante que os resultados dos testes sejam confiáveis e não sejam afetados por mudanças em outras partes do sistema.
 
-3. Asserções: você precisa saber como usar a biblioteca expect para fazer asserções sobre o resultado dos testes.
+2. **Automatização**: Os testes unitários devem ser automatizados para garantir que possam ser executados rapidamente e com precisão.
 
-4. Mocks: Jest permite que você crie "mocks" para funções externas, o que é útil para testar funções isoladas sem depender de seus componentes externos.
+3. **Cobertura de código**: A cobertura de código é a medida da quantidade de código que é executada durante a execução dos testes. É importante ter uma cobertura de código adequada para garantir que todas as partes do código sejam testadas e que todos os erros possíveis sejam detectados.
 
-5. Snapshots: Jest permite que você crie "snapshots" de seus componentes, que podem ser usados para testar se sua saída é consistente.
+4. **Feedback rápido**: Os testes unitários devem fornecer feedback rápido sobre a qualidade do código, permitindo que os desenvolvedores corrijam problemas rapidamente antes que eles sejam mais difíceis e caros de corrigir.
 
-6. Execução de testes: você precisa saber como executar seus testes usando o Jest, incluindo como gerar relatórios e cobertura de código.
+5. **Confiabilidade**: Os testes unitários devem ser confiáveis e reproduzíveis, de forma que, ao serem executados várias vezes, sempre produzam os mesmos resultados.
+
+6. **Desenvolvimento ágil**: Os testes unitários são uma parte importante do desenvolvimento ágil, permitindo que os desenvolvedores trabalhem de forma rápida e segura, garantindo que as mudanças no código não afetem negativamente outras partes do sistema.
+
+Ao seguir esses conceitos, os testes unitários podem ser uma ferramenta valiosa para garantir a qualidade e a integridade do código, acelerar o processo de desenvolvimento e tornar o trabalho dos desenvolvedores mais fácil e seguro.
+
+## O que preciso saber
+
+Para trabalhar com testes unitários usando Jest, você precisa ter conhecimento básico em JavaScript e compreender os conceitos de testes unitários em geral. Além disso, você precisa saber:
+
+1. [Instalação e configuração do Jest](https://jestjs.io/pt-BR/docs/getting-started) em seu projeto.
+
+2. **Escrita de testes**: Jest fornece vários métodos, como describe, it, test, expect, etc., para escrever e executar seus testes.
+
+3. **Asserções**: você precisa saber como usar a biblioteca expect para fazer asserções sobre o resultado dos testes.
+
+4. **Mocks**: Jest permite que você crie "mocks" para funções externas, o que é útil para testar funções isoladas sem depender de seus componentes externos.
+
+5. **Snapshots**: Jest permite que você crie "snapshots" de seus componentes, que podem ser usados para testar se sua saída é consistente.
+
+6. **Execução de testes**: você precisa saber como executar seus testes usando o Jest, incluindo como gerar relatórios e cobertura de código.
 
 Em geral, a familiaridade com Jest e a prática de escrever testes irão ajudá-lo a se tornar proficiente em testes unitários com Jest.
 
-### Os métodos mais comuns do Jest são:
+## Os métodos mais comuns:
 
-1. `describe`: usado para agrupar testes relacionados em blocos lógicos. Cada describe pode conter vários it ou test para descrever comportamentos específicos.
+1. **`describe`**: usado para agrupar testes relacionados em blocos lógicos. Cada describe pode conter vários it ou test para descrever comportamentos específicos.
 
-2. `it`: usado para descrever um comportamento específico que você está testando. É equivalente ao test.
+2. **`it`**: usado para descrever um comportamento específico que você está testando. É equivalente ao test.
 
-3. `test`: usado para descrever um comportamento específico que você está testando. É equivalente ao it.
+3. **`test`**: usado para descrever um comportamento específico que você está testando. É equivalente ao it.
 
-4. `beforeEach` e `afterEach`: usados para executar código antes ou depois de cada teste. É útil para inicializar ou limpar dados antes ou depois de cada teste.
+4. **`beforeEach`** e **`afterEach`**: usados para executar código antes ou depois de cada teste. É útil para inicializar ou limpar dados antes ou depois de cada teste.
 
-5. `expect`: usado para fazer asserções sobre o resultado dos testes. É a biblioteca central do Jest para verificar se seus testes estão passando ou falhando.
+5. **`expect`**: usado para fazer asserções sobre o resultado dos testes. É a biblioteca central do Jest para verificar se seus testes estão passando ou falhando.
 
-6. `jest.fn`: usado para criar mocks de funções. É útil para testar funções isoladas sem depender de seus componentes externos.
+6. **`jest.fn`**: usado para criar mocks de funções. É útil para testar funções isoladas sem depender de seus componentes externos.
 
 ## Asserções
 **Aqui estão alguns exemplos de asserções com Jest usando o método `expect`**:
@@ -152,3 +183,11 @@ A execução de testes no Jest funciona da seguinte maneira:
 6. Se algum caso de teste falhar, o Jest exibe informações sobre a falha, como a mensagem de erro e a saída do console.
 
 Você pode executar todos os seus testes com um único comando, como jest, ou executar apenas um subconjunto de testes específicos. O Jest também fornece recursos avançados, como testes paralelos, testes em segundo plano e cache de compilação para ajudar a otimizar a velocidade de execução de seus testes.
+
+### Referências
+
+- https://jestjs.io/pt-BR/docs/getting-started
+- https://jestjs.io/pt-BR/docs/expect
+- https://jestjs.io/pt-BR/docs/mock-function-api
+- https://jestjs.io/pt-BR/docs/snapshot-testing
+- https://jestjs.io/pt-BR/docs/configuration
