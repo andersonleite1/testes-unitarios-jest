@@ -116,3 +116,39 @@ test('should call the mock function with the correct arguments', () => {
 
 Neste exemplo, estamos configurando a função mock para retornar o valor 42 quando chamada pela primeira vez. Verificamos se o resultado da chamada à função mock é o esperado e se a função mock foi realmente chamada.
 
+## Snapshots
+
+Snapshots são uma forma de testar o comportamento de componentes ou objetos em seus testes de forma mais fácil e rápida. Em vez de escrever todas as verificações manualmente, você pode capturar uma imagem (snapshot) do componente ou objeto em questão e, em seguida, compará-lo com a versão capturada em futuros testes. Se o componente ou objeto mudar, você será notificado e pode atualizar o snapshot manualmente.
+
+Você pode usar snapshots para testar componentes de interface do usuário (UI), como React components, ou objetos JSON.
+
+Aqui está um exemplo de como você pode usar snapshots no Jest:
+
+```javascript
+test('should match the snapshot', () => {
+  const component = <div>Hello, world</div>;
+  expect(component).toMatchSnapshot();
+});
+```
+
+Neste exemplo, estamos testando um componente React. Usamos o método toMatchSnapshot para comparar o componente com a versão capturada anteriormente. Se o componente mudar, o Jest notificará e você poderá atualizar o snapshot manualmente.
+
+Em geral, você deve usar snapshots quando quiser testar componentes ou objetos que podem mudar com frequência, mas ainda precisam ser comparados com uma versão anterior. Isso permite que você teste o comportamento de seu código de forma mais fácil e rápida, sem precisar escrever verificações manualmente todas as vezes.
+
+## Execução
+
+A execução de testes no Jest funciona da seguinte maneira:
+
+1. O Jest procura por arquivos de teste em seu projeto, geralmente com a extensão .test.js ou .spec.js.
+
+2. Uma vez encontrados, o Jest carrega os arquivos de teste e procura por funções test ou describe.
+
+3. Cada função test representa um caso de teste individual e é executada individualmente pelo Jest.
+
+4. O Jest usa a biblioteca de asserção Jest para verificar se as expectativas em cada caso de teste são satisfeitas.
+
+5. Quando todos os casos de teste são concluídos, o Jest exibe o resultado da execução de testes, incluindo quantos testes passaram ou falharam.
+
+6. Se algum caso de teste falhar, o Jest exibe informações sobre a falha, como a mensagem de erro e a saída do console.
+
+Você pode executar todos os seus testes com um único comando, como jest, ou executar apenas um subconjunto de testes específicos. O Jest também fornece recursos avançados, como testes paralelos, testes em segundo plano e cache de compilação para ajudar a otimizar a velocidade de execução de seus testes.
